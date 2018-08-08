@@ -128,6 +128,7 @@
 			CharacterSheetSkillSorter: true,
 			CharacterSheetCustomThemeColor: true,
 			DiceRoller: true,
+			CopyForForums: true,
 			AsyncDiceRoller: true,
 			Notes: true,
 			InitiativeTracker: true,

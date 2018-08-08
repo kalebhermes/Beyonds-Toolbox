@@ -41,14 +41,36 @@
 					var dice = $(this).text().replace(/ /g,''),
 				        title = 'Dice Roller';
 
-					$.modal(_this.roll(dice, title), title, [{
+				    var buttons = [];
+				    var roll = {
 						label: "Reroll",
 						className: '',
 						callback: function() {
 							$('.tb-modal .fullscreen-modal-content').html(_this.roll(dice, title));
 							return false;
 						}
-					},{ label: "Cancel" }]);
+					};
+					var copy = { label: "Copy",
+						className: '',
+						callback: function() {
+
+							navigator.clipboard.writeText("[roll]{0}[/roll]".format(dice)).then(
+								function() {
+									$('.tb-modal .fullscreen-modal-content').append('Copied to clipboard!');
+								},
+								function(err) {
+									$('.tb-modal .fullscreen-modal-content').append("Could not copy text.");
+								});
+							
+							return false;
+						}
+					};
+					var cancel = { label: "Cancel" };
+					buttons.push(roll);
+					if(Toolbox.settings.options.CopyForForums && navigator.clipboard) buttons.push(copy);
+					buttons.push(cancel);
+
+					$.modal(_this.roll(dice, title), title, buttons);
 
 					$('.tb-modal').addClass('tb-modal-small');
 				});

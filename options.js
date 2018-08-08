@@ -48,6 +48,7 @@ function save_settings() {
 				CharacterSheetSkillSorter:document.getElementById('optionCharacterSheetSkillSorter').checked,
 				CharacterSheetCustomThemeColor: document.getElementById('optionCharacterSheetCustomThemeColor').checked,
 				DiceRoller: document.getElementById('optionDiceRoller').checked,
+				CopyForForums: document.getElementById('optionCopyForForum').checked,
 				AsyncDiceRoller: document.getElementById('optionAsyncDiceRoller').checked,
 				Notes: document.getElementById('optionNotes').checked,
 				InitiativeTracker: document.getElementById('optionInitiativeTracker').checked,
@@ -85,6 +86,7 @@ function restore_settings() {
 			CharacterSheetSkillSorter: true,
 			CharacterSheetCustomThemeColor: true,
 			DiceRoller: true,
+			CopyForForums: true,
 			AsyncDiceRoller: true,
 			Notes: true,
 			InitiativeTracker: true,
@@ -104,6 +106,7 @@ function restore_settings() {
 		document.getElementById('optionGitHubToken').value = items.settings.GitHubToken;
 		document.getElementById('optionGitHubGistID').value = items.settings.GistID;
 		document.getElementById('optionCharacterSheetDiceRoller').checked = items.settings.CharacterSheetDiceRoller;
+		document.getElementById('optionCopyForForum').checked = items.settings.CopyForForums;
 		document.getElementById('optionCharacterSheetSkillSorter').checked = items.settings.CharacterSheetSkillSorter;
 		document.getElementById('optionCharacterSheetCustomThemeColor').checked = items.settings.CharacterSheetCustomThemeColor;
 		document.getElementById('optionDiceRoller').checked = items.settings.DiceRoller;
